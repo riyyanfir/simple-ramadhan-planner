@@ -53,11 +53,9 @@ window.addEventListener('load', async() => {
             <td>${jadwal.data.imsak}</td>
         </tr>
     `;
-    console.log(jadwal);
     selectKota.addEventListener('change', async() => {
         const value = selectKota.options[selectKota.selectedIndex].value;
         const jadwal = await jadwalSholat(value, tanggalSekarang);
-        console.log(value)
         tableJadwal.innerHTML = `
             <tr>
                 <td>${jadwal.data.subuh}</td>

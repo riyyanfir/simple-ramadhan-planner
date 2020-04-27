@@ -1,0 +1,120 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  box-shadow: none;
+}
+
+h4 {
+    margin-bottom: 35px;
+}
+
+p {
+    line-height: 2rem;
+  }
+
+.logo-small {
+  left: 65px !important;
+}
+
+.logo-small img {
+  width: 75%;
+}
+
+.logo-large img {
+  width: 110%;
+}
+
+  .blok {
+    position: relative;
+    z-index: -1;
+    background: #4a148c;
+    height: 50vh;
+  }
+  
+  .wave {
+    position: absolute;
+    height: 68px;
+    width: 100%;
+    background: #4a148c;
+    bottom: 0;
+  }
+  
+  .wave::before, .wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+  }
+  
+  .wave::before {
+    width: 53.5%;
+    height: 100%;
+    background-color: #fff;
+    right: 0;
+    top: 60%;
+  }
+  .wave::after {
+    width: 53.5%;
+    height: 92.5%;
+    background-color: #4a148c;
+    left: 0;
+    top: 40%;
+  }
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+    position: absolute;
+    width: 100%;
+}
+
+.parallax-container .section h5 {
+  font-size: 20px;
+}
+
+.mobile-ul {
+  padding-left: 110px  !important;
+}
+
+.text-puasa {
+  font-size: 12px;
+}
+
+@media only screen and (max-width : 992px) {
+  nav .brand-logo {
+    left: 16px;
+  }
+
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+
+  .parallax-container .section {
+    top: -25px !important;
+  }
+  
+  .parallax-container .section h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .blok {
+    height: 43vh;
+  }
+
+}
+
+footer.page-footer {
+  margin: 0;
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<title>Ramadhan planner</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:ital@0;1&display=swap">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+	<div class="navbar-fixed">
+		<nav class="purple darken-4" role="navigation">
+			<div class="nav-wrapper container">
+				<a id="logo-container" href="#" class="brand-logo hide-on-med-and-down left logo-large"><img src="logo.png" alt=""></a>
+				<a id="logo-container" href="#" class="brand-logo hide-on-large-only logo-small"><img src="logo.png" alt=""></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#jadwal">Jadwal Sholat</a></li>
+					<li><a href="#target">Target Ramadhan</a></li>
+					<li><a href="#aktivitas">Aktivitas Harian</a></li>
+				</ul>
+				
+				<ul class="mobile-ul hide-on-large-only">
+					<li><a href="#jadwal">Jadwal</a></li>
+					<li><a href="#target">Target</a></li>
+					<li><a href="#aktivitas">Aktivitas</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div id="index-banner" class="parallax-container">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<br><br>
+				<h1 class="header center orange-text text-darken-4">Ramadhan Planner</h1>
+				<div class="row center">
+					<h5 class="header col s12 light">Rencanakan aktivitasmu dibulan Ramadhan ini</h5>
+				</div>
+				<br><br>
+
+			</div>
+		</div>
+		<section class="blok">
+			<div class="wave"></div>
+		</section>
+		<!-- <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div> -->
+	</div>
+
+
+	<div id="jadwal" class="section scrollspy">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<h4 class="light grey-text text-darken-3 center">Jadwal Shalat 1441 H</h4>
+					<div class="row center">
+						<div class="col m6">
+							<p id="tanggal"></p>
+						</div>
+						<div class="input-field col m4">
+							<select id="selectKota">
+								<option value="676">KOTA SERANG</option>
+								<option value="673" selected>SERANG</option>
+								<option value="672">PANDEGLANG</option>
+								<option value="677">KOTA TANGERANG</option>
+								<option value="671">LEBAK</option>
+								<option value="675">KOTA CILEGON</option>
+								<option value="667">KOTA JAKARTA</option>
+								<option value="697">KOTA BANDUNG</option>
+								<option value="700">KOTA BOGOR</option>
+								<option value="686">GARUT</option>
+								<option value="699">KOTA BEKASI</option>
+							</select>
+						</div>
+					</div>
+					<table class="centered">
+						<thead>
+							<tr>
+								<th>Subuh</th>
+								<th>Dzuhur</th>
+								<th>Ashar</th>
+								<th>Maghrib</th>
+								<th>Isya</th>
+								<th>Imsak</th>
+							</tr>
+						</thead>
+						<tbody id="table-jadwal"></tbody>
+					</table>
+					<span class="grey-textighten-3" style="font-size: 9px;">*Sumber : https://fathimah.docs.apiary.io/</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="target" class="section grey lighten-4 scrollspy">
+		<div class="container">
+			<div class="row">
+				<h4 class="light grey-text text-darken-3 center">Target Ramadhan 1441 H</h4>
+				<div class="input-field col s11 m8 offset-m2">
+					<input type="text" id="target-text" class="validate">
+					<label for="target-text">Tuliskan targetmu</label>
+					<button id="btn-target" class="btn prefix orange darken-4"><i class="material-icons">send</i></button>
+				</div>
+				<div class="col s12 m8 offset-m2">
+					<table>
+						<thead>
+								<tr>
+									<th>Target Ku</th>
+									<th>Aksi</th>
+								</tr>
+						</thead>
+						<tbody id="table-target"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="aktivitas" class="section scrollspy">
+		<div class="container">
+			<div class="row">
+				<h4 class="light grey-text text-darken-3 center">Aktivitas Harian</h4>
+				<div class="col s12 m6">
+					<div class="card lightblue" id="card-daily">
+						<div class="card-content">
+							<div class="row">
+								<div class="col s6">
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Puasa"/>
+												<span>Puasa</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Shalat Fardu"/>
+												<span>Shalat Fardu</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Shalat Rawatib"/>
+												<span>Shalat Rawatib</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Shalat Dhuha"/>
+												<span>Shalat Dhuha</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Shalat Tahajjud"/>
+												<span>Shalat Tahajjud</span>
+											</label>
+										</p>
+
+								</div>
+								<div class="col s6">
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Shalat Tarawih"/>
+												<span>Shalat Tarawih</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Tilawah"/>
+												<span>Tilawah</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Tahfidz Qur'an"/>
+												<span>Tahfidz Qur'an</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Dzikir Pagi"/>
+												<span>Dzikir Pagi</span>
+											</label>
+										</p>
+										<p>
+											<label>
+												<input type="checkbox" name="dailyAct[]" value="Dzikir Petang"/>
+												<span>Dzikir Petang</span>
+											</label>
+										</p>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 25px;margin-bottom: -8px;">
+								<button class="btn right col s12 orange darken-4 addDailyAct">Tambah</button>
+							</div>
+						</div>
+					</div>
+					<p id="pAct" class="center hide" style="font-size: 12px;">Anda sudah menchecklist aktivitas harian hari ini</p>
+				</div>
+				<div class="col s12 m6">
+					<table>
+						<thead>
+							<tr>
+								<th>Tanggal</th>
+								<th>Aksi</th>
+							</tr>
+						</thead>
+						<tbody id="table-daily"></tbody>
+					</table>
+					<div id="view" class="modal">
+						<div class="modal-content"></div>
+						<div class="modal-footer">
+							<span class="modal-close waves-effect waves-grey btn-flat">Tutup</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section grey lighten-4">
+		<div class="container">
+
+		<div class="row">
+			<div class="col s12">
+				<h4 class="center">Amalan di bulan Ramadhan</h4>	
+				<div class="row text-puasa">
+					<div class="col s12 m6">
+						<p>1. Ikhlaskan niat karena Allah swt semata. Menghadaplah kepada Allah swt dengan membawa ibadah puasamu. Sungguh! Allah swt tidak akan menerima amal kecuali yang ikhlas dan hanya mengharap ridho-Nya.</p>
+						<p>2. Berusahalah untuk memanfaatkan waktu yang sedikit di sela-sela aktifitas anda seperti berdzikir saat anda berjalan, tilawah Al-Quran saat di kendaraan,......</p>
+						<p>3. Bersahurlah (makan sahur). Karena hal itu adalah sunnah Nabimu : <i>"Makanlah sahur karena di dalamnya ada keberkahan"</i> (Muttaafaq Alihi).</p>
+						<p>4. Bersegeralah berbuka puasa. Karena ini juga sunnah Nabimu ; <i>"Manusia akan senantiasa dalam kebaikan dengan menyegerakan bukan dan mengakhirkan makan sahur"</i> (Muttaafaq Alihi).</p>
+						<p>5. Sambut harimu dengan tilawah Al-Quran disertai tadabbur dan tafakkur. Hendaklah tilawah satu juz perhari (minimal). Karena Jibril mentalaqqi (mendekte) kepada Nabi saw setiap malam dan mengajarkan Al-Quran.</p>
+						<p>6. Perbanyaklah dzikir, istighfar, do'a setelah sholat dan diwaktu-waktu yang utama; waktu sahur, saat-saat akhir waktu ashar menjelang maghrib, saat berbuka. Dalam atsar : <i>"Bahwasanya bagi orang berpuasa saat berbuka benar-benar doanya tidak ditolak"</i> (HR. Ibnu Majah).</p>
+						<p>7. Jaga lisanmu dari berbohong, dusta, ghibah (menggunjing), namimah (adu domba), dan bersaksi palsu. <i>"Barang siapa yang tidak meninggalkan perkataan dusta (berbohong), maka Allah swt tidak berhajat kepada orang yang meninggalkan makan dan minumnya (puasa)".</i>(HR. Al Bukhori).</p>
+					</div>
+					<div class="col s12 m6">
+						<p>8. Perbanyaklah sedekah. SUngguh! Rasulullah saw orang yang paling dermawan dan bertambah dasyat saat dibulan Ramadhan.</p>
+						<p>9. Jangan berlebihan saat berbuka. Perut yang penuh dengan makanan akan menyebabkan kemalasan. Dan kekenyangan akan membuat hati tumpul dan keras. <i>"Cukuplah bagi anak Adam beberapa suap makanan untuk menegakkan punggungnya, dan jika harus dilakukan maka jadikan 1/3 untuk makanan, 1/3 untuk minuman dan 1/3 untuk bernafas (rongga udara)".</i>(HR. At Tirmizi, Ibnu Hibban dan Al Hakim).</p>
+						<p>10. Bersungguh-sungguhlah untuk melakukan sholat malam dengan sempurna. Al Hadits : <i>"Barang siapa yang berdiri bersama imam hingga ia selesai, dicatat baginya sholat malam".</i>(HR. Ahlu Sunnan). Hendaklah khusyu', tidak tergesa-gesa, buang jauh-jauh kesibukan dunia.</p>
+						<p>11. Kerjakan puasa Ramadhan dengan penuh keimanan (yaqin) dan penuh perhitungan. <i>"Barang siapa yang puasa ramadhan dengan penuh keimanan dan penuh perhitungan, diampuni baginya apa yang telah berlalu dari dosa-dosanya".</i>(HR. Al Bukhori dan Muslim).</p>
+						<p>12. Beribadah pada malam-malam lailatul qadr dengan penuh keimanan dan perhitungan. <i>"Barang siapa yang mendirikan ibadah di malam-malam (lailatul qadr) dengan penuh keimanan dan perhitungan, diampuni baginya dosa-dosanya yang telah berlalu".</i>(HR. Al Bukhori dan Muslim).</p>
+						<p>13. Bersungguh-sungguhlah di 10 malam terakhir. <i>"Rasulullah saw apabila telah memasuki 10 terakhir ramadhan beliau menghidupkan malam-malamnya, membangunkan keluarganya dan mengencangkan kainnya (mengurangi hubungan suami-istri)"</i>(HR. Al Bukhori dan Muslim).</p>
+						<p>14. Sertakan Allah swt dalam setiap urusan anda, jaga dalam keadaan rahasia ataupun terbuka. Sehingga buah dan hikmah dari puasa senantiasa ada selamanya. Agar kalian bertaqwa.</p>
+					</div>
+				</div>
+				<span class="grey-textighten-3" style="font-size: 9px;">*Referensi : Tri Mulyono, <i>200 Pintu-Pintu Kebaikan Di Bulan Ramdhan</i>, (Bandar Lampung: Pustaka Ali Imron). 2017</span>
+			</div>
+		</div>
+
+		</div>
+	</div>
+
+	<footer class="page-footer purple darken-4">
+		<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">Web App Info</h5>
+				<p class="grey-text text-lighten-4">Website untuk membuat targetan dan check list aktivitas harian di bulan Ramadhan, agar kita dapat memaksimalkan amalan-amalan di bulan Ramadhan ini.</p>
+			</div>
+		</div>
+		</div>
+		<div class="footer-copyright">
+		<div class="container">
+		Made by <a class="orange-text text-darken-4" target="_blank" href="http://materializecss.com">Muhammad Riyyan Firdaus</a>
+		</div>
+		</div>
+	</footer>
+
+
+	<script type="text/javascript" src="assets/js/materialize.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+
+  </body>
+</html>

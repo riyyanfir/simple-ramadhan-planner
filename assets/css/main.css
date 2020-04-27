@@ -82,6 +82,10 @@ p {
   padding-left: 110px  !important;
 }
 
+.mobile-ul li a {
+  padding: 0 8px;
+}
+
 .text-puasa {
   font-size: 12px;
 }
